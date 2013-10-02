@@ -3,11 +3,11 @@
 {% block content %}
   <div class="container-fluid">
 		<div class="row-fluid">
-			<h1>インストールしています</h1>
+			<h1>{% trans %}Now Installing XOOPS Cube Legacy{% endtrans %}</h1>
 		</div>
 	</div>
 
-	<script type="text/javascript" src="{{ site.url }}/v2/assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ site.url }}/install/assets/js/jquery.min.js"></script>
 	<script type="text/javascript">
 	$(function() {
 		$.post('{{ site.url }}/user.php', {

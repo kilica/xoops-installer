@@ -15,7 +15,7 @@
 		{% if not testResult.requirementIsSatisfied %}
 			<div class="row-fluid">
 				{% if testResult.hasMissingPHPExtensions %}
-					<div>PHPの拡張が足りないです。</div>
+					<div>{% trans %}Some PHP Extensions are required{% endtrans %}</div>
 					<ul>
 						{% for extensions in testResult.getMissingPHPExtensions %}
 							<li>{{ extensions }}</li>
@@ -24,7 +24,7 @@
 				{% endif %}
 
 				{% if testResult.hasNotWritableFiles %}
-					<div>以下のファイルに書き込み権限を与えて下さい。</div>
+					<div>{% trans %}Grant writable permission to the following files:{% endtrans %}</div>
 					<ul>
 						{% for file in testResult.getNotWritableFiles %}
 							<li>{{ file }}</li>
@@ -42,7 +42,7 @@
 					{% if configrationTestResult %}
 						{% if not configrationTestResult.configrationIsSatisfied %}
 							{% if configrationTestResult.getNotWritableFiles %}
-								<div>以下のファイルに書き込み権限を与えて下さい。</div>
+								<div>{% trans %}Grant writable permission to the following files:{% endtrans %}</div>
 								<ul>
 									{% for file in configrationTestResult.getNotWritableFiles %}
 										<li>{{ file }}</li>
@@ -76,7 +76,7 @@
 						</div>
 
 						<div class="control-group">
-							<label class="control-label" for="dbUser">データベースユーザ名</label>
+							<label class="control-label" for="dbUser">{% trans %}Database Username{% endtrans %}</label>
 
 							<div class="controls">
 								<input id="dbUser" type="text" name="dbUser" value="{{ form.dbUser }}"/>
@@ -84,7 +84,7 @@
 						</div>
 
 						<div class="control-group">
-							<label class="control-label" for="dbPassword">データベースパスワード</label>
+							<label class="control-label" for="dbPassword">{% trans %}Database Password{% endtrans %}</label>
 
 							<div class="controls">
 								<input id="dbPassword" type="text" name="dbPassword" value="{{ form.dbPassword }}"/>
@@ -92,7 +92,7 @@
 						</div>
 
 						<div class="control-group">
-							<label class="control-label" for="dbName">データベース名</label>
+							<label class="control-label" for="dbName">{% trans %}Database Name{% endtrans %}</label>
 
 							<div class="controls">
 								<input id="dbName" type="text" name="dbName" value="{{ form.dbName }}"/>
@@ -100,7 +100,7 @@
 						</div>
 
 						<div class="control-group">
-							<label class="control-label" for="dbPrefix">テーブル接頭語</label>
+							<label class="control-label" for="dbPrefix">{% trans %}Database Prefix{% endtrans %}</label>
 
 							<div class="controls">
 								<input id="dbPrefix" type="text" name="dbPrefix" value="{{ form.dbPrefix }}"/>
@@ -110,7 +110,7 @@
 						<hr>
 
 						<div class="control-group">
-							<label class="control-label" for="url">XCLのURL</label>
+							<label class="control-label" for="url">{% trans %}Site URL{% endtrans %}</label>
 
 							<div class="controls">
 								<input class="input-xxlarge" id="url" type="text" name="url" value="{{ form.url }}"/>
@@ -128,7 +128,7 @@
 						<hr>
 
 						<div class="control-group">
-							<label class="control-label" for="adminUsername">管理者ユーザ名</label>
+							<label class="control-label" for="adminUsername">{% trans %}Administrator's Name{% endtrans %}</label>
 
 							<div class="controls">
 								<input id="adminUsername" type="text" name="adminUsername" value="{{ form.adminUsername }}"/>
@@ -136,7 +136,7 @@
 						</div>
 
 						<div class="control-group">
-							<label class="control-label" for="adminEmail">管理者メールアドレス</label>
+							<label class="control-label" for="adminEmail">{% trans %}Administrator's Email{% endtrans %}</label>
 
 							<div class="controls">
 								<input class="input-xxlarge" id="adminEmail" type="text" name="adminEmail" value="{{ form.adminEmail }}"/>
@@ -144,7 +144,7 @@
 						</div>
 
 						<div class="control-group">
-							<label class="control-label" for="adminPassword">管理者パスワード</label>
+							<label class="control-label" for="adminPassword">{% trans %}Administrator's Password{% endtrans %}</label>
 
 							<div class="controls">
 								<input id="adminPassword" type="password" name="adminPassword" value=""/>
@@ -153,7 +153,7 @@
 						</div>
 
 						<div class="form-actions">
-							<button type="submit" class="btn btn-primary">インストール</button>
+							<button type="submit" class="btn btn-primary">{% trans %}Install{% endtrans %}</button>
 						</div>
 					</form>
 				</div>

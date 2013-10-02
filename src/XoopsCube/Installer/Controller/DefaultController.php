@@ -73,6 +73,7 @@ class DefaultController
         $xoopsTrustPath = $finder->find($this->config->get('xoops_root_path'));
 
         $request = new Request();
+
         $form = new ConfigurationForm();
         $form->setURL($request->getSiteUrl());
         $form->setXoopsTrustPath($xoopsTrustPath);
@@ -124,9 +125,12 @@ class DefaultController
 
     public function respond()
     {
+        $lang = htmlspecialchars($_GET['lang'], ENT_QUOTES);
+        $lang = isset($lang) ? $lang : 'en_US';
+        htmlspecialchars($lang, ENT_QUOTES);
 // Set language to French
-putenv('LC_ALL=en_US');
-setlocale(LC_ALL, 'en_US');
+putenv("LC_ALL=$lang");
+setlocale(LC_ALL, $lang);
 
 // Specify the location of the translation tables
 bindtextdomain('messages', $this->config->get('installer.locale_dir'));

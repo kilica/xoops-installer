@@ -41,8 +41,8 @@ msgstr "インストール"
 msgid "To Install"
 msgstr "インストールへ"
 
-msgid "Now Installing XOOPS Cube Legacy"
-msgstr "インストール中です"
+msgid ""
+msgstr ""
 
 msgid ""
 msgstr ""
